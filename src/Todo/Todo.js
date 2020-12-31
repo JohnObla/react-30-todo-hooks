@@ -9,15 +9,19 @@ const Todo = props => {
     <article className="Todo">
       <p className="Todo-task">{props.task}</p>
       <span className="Todo-buttons">
-        <button className="Todo-edit" onClick={handleClick(props.edit)}>
-          Edit
+        <button
+          className="Todo-edit"
+          aria-label="Edit"
+          onClick={handleClick(props.edit)}
+        >
+          <i class="fas fa-pencil-alt"></i>
         </button>
         <button
           className="Todo-close"
           aria-label="Close"
           onClick={handleClick(props.close)}
         >
-          X
+          <i class="fas fa-trash"></i>
         </button>
       </span>
     </article>

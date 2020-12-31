@@ -19,7 +19,7 @@ describe('Todo', () => {
     const id = 'fake_id';
     const editFn = jest.fn();
     const wrapper = shallow(<Todo id={id} edit={editFn} />);
-    const editBtn = wrapper.find('button[children="Edit"]');
+    const editBtn = wrapper.find('button[aria-label="Edit"]');
 
     editBtn.simulate('click');
 
@@ -31,7 +31,7 @@ describe('Todo', () => {
     const id = 'fake_id';
     const closeFn = jest.fn();
     const wrapper = shallow(<Todo id={id} close={closeFn} />);
-    const closeBtn = wrapper.find('button[aria-label="Close"][children="X"]');
+    const closeBtn = wrapper.find('button[aria-label="Close"]');
 
     closeBtn.simulate('click');
 
