@@ -6,7 +6,7 @@
 }
 
 .TodoList-headers {
-  margin: 2rem 2rem 0;
+  margin: 2rem 2rem;
 }
 
 .TodoList-main-header {
@@ -19,5 +19,5 @@
 
 .TodoList-todos {
   width: 100%;
-  margin: 2rem 0;
+  margin: 0;
 }
