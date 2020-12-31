@@ -4,6 +4,10 @@
   margin: 2rem;
 }
 
+.NewTodoForm-label {
+  font-size: 1.2rem;
+}
+
 .NewTodoForm-input-and-button {
   margin-top: 0.2rem;
   padding: 0.5rem;
