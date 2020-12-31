@@ -15,15 +15,21 @@ const NewTodoForm = props => {
       <label className="NewTodoForm-label" htmlFor="task">
         New Todo
       </label>
-      <span>
+      <span className="">
         <input
+          className="NewTodoForm-input-and-button NewTodoForm-input"
           type="text"
           id="task"
           name="task"
           value={task}
           onChange={changeTask}
         />
-        <button type="submit">Add Todo</button>
+        <button
+          className="NewTodoForm-button NewTodoForm-input-and-button"
+          type="submit"
+        >
+          Add Todo
+        </button>
       </span>
     </form>
   );

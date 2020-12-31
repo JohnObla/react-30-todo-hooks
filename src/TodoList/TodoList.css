@@ -1,8 +1,10 @@
 .TodoList {
   color: white;
-  background-color: rgb(228, 54, 54);
+  margin: 3rem auto;
   display: flex;
+  width: 24rem;
   flex-direction: column;
+  background-color: rgb(228, 54, 54);
 }
 
 .TodoList-headers {

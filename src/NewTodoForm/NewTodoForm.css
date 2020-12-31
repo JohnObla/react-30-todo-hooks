@@ -3,3 +3,19 @@
   flex-direction: column;
   margin: 2rem;
 }
+
+.NewTodoForm-input-and-button {
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+  border: 0.1rem white solid;
+}
+
+.NewTodoForm-input {
+  width: 12.5rem;
+}
+
+.NewTodoForm-button {
+  background-color: inherit;
+  color: white;
+  width: 6rem;
+}
