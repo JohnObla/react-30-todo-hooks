@@ -1,5 +1,5 @@
 const Todo = props => {
-  const handleClick = fn => evt => {
+  const handleClick = fn => () => {
     fn(props.id);
   };
 
