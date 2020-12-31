@@ -11,7 +11,7 @@ const NewTodoForm = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label for="task">New Task</label>
+      <label htmlFor="task">New Task</label>
       <input
         type="text"
         id="task"

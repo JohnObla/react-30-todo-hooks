@@ -1,0 +1,12 @@
+.Todo {
+  display: flex;
+  padding: 0 2rem;
+}
+
+.Todo-task {
+  margin: 0;
+}
+
+.Todo-buttons {
+  margin-left: auto;
+}
