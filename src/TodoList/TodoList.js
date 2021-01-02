@@ -13,7 +13,7 @@ const TodoList = () => {
   const editTodo = id => {
     setTodos(
       todos.map(t => {
-        if (t.id !== id) return t;
+        if (t.id !== id) return { ...t, isEditing: false };
         return { ...t, isEditing: true };
       })
     );
