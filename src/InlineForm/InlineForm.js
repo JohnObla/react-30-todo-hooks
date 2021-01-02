@@ -31,6 +31,8 @@ const InlineForm = props => {
         name="task"
         value={task}
         onChange={changeTask}
+        minLength={0}
+        maxLength={27}
       />
       <span className="Todo-buttons">
         <button className="Todo-edit" type="submit" aria-label="Submit Edit">

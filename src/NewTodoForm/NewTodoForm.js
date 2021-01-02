@@ -26,6 +26,8 @@ const NewTodoForm = props => {
           name="task"
           value={task}
           onChange={changeTask}
+          minLength={0}
+          maxLength={27}
         />
         <button
           className="NewTodoForm-button NewTodoForm-input-and-button"
