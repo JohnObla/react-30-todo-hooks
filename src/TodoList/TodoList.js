@@ -42,7 +42,7 @@ const TodoList = () => {
   return (
     <main className="TodoList">
       <div className="TodoList-headers">
-        <h1 className="TodoList-main-header">Todo List</h1>
+        <h1 className="TodoList-main-header">To-do List</h1>
         <h5 className="TodoList-sub-header">A Simple React Hooks Todo App</h5>
       </div>
       <section className="TodoList-todos">
