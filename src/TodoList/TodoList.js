@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Todo from '../Todo/Todo';
 import NewTodoForm from '../NewTodoForm/NewTodoForm';
+import InlineForm from '../InlineForm/InlineForm';
 import './TodoList.css';
 
 const TodoList = () => {
@@ -12,7 +13,7 @@ const TodoList = () => {
   const editTodo = id => {
     setTodos(
       todos.map(t => {
-        if (t.id === id) return t;
+        if (t.id !== id) return t;
         return { ...t, isEditing: true };
       })
     );
