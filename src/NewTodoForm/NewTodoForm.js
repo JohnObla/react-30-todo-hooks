@@ -6,8 +6,11 @@ const NewTodoForm = props => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    props.submit(task);
-    resetTask();
+
+    if (task !== '') {
+      props.submit(task);
+      resetTask();
+    }
   };
 
   return (
