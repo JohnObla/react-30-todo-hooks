@@ -19,6 +19,24 @@ const TodoList = () => {
     );
   };
 
+  const submitEdit = (id, task) => {
+    setTodos(
+      todos.map(t => {
+        if (t.id !== id) return t;
+        return { ...t, task, isEditing: false };
+      })
+    );
+  };
+
+  const cancelEdit = id => {
+    setTodos(
+      todos.map(t => {
+        if (t.id !== id) return t;
+        return { ...t, isEditing: false };
+      })
+    );
+  };
+
   const closeTodo = id => setTodos(todos.filter(t => t.id !== id));
 
   return (
@@ -28,15 +46,29 @@ const TodoList = () => {
         <h5 className="TodoList-sub-header">A Simple React Hooks Todo App</h5>
       </div>
       <section className="TodoList-todos">
-        {todos.map(t => (
-          <Todo
-            key={t.id}
-            id={t.id}
-            task={t.task}
-            edit={editTodo}
-            close={closeTodo}
-          />
-        ))}
+        {todos.map(t => {
+          if (t.isEditing) {
+            return (
+              <InlineForm
+                key={t.id}
+                id={t.id}
+                task={t.task}
+                submit={submitEdit}
+                cancel={cancelEdit}
+              />
+            );
+          }
+
+          return (
+            <Todo
+              key={t.id}
+              id={t.id}
+              task={t.task}
+              edit={editTodo}
+              close={closeTodo}
+            />
+          );
+        })}
       </section>
       <NewTodoForm submit={addTodo} />
     </main>
