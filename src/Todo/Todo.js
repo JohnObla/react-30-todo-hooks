@@ -14,14 +14,14 @@ const Todo = props => {
           aria-label="Edit"
           onClick={handleClick(props.edit)}
         >
-          <i class="fas fa-pencil-alt"></i>
+          <i className="fas fa-pencil-alt"></i>
         </button>
         <button
           className="Todo-close"
           aria-label="Close"
           onClick={handleClick(props.close)}
         >
-          <i class="fas fa-trash"></i>
+          <i classNamess="fas fa-trash"></i>
         </button>
       </span>
     </article>
