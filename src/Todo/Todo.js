@@ -21,7 +21,7 @@ const Todo = props => {
           aria-label="Close"
           onClick={handleClick(props.close)}
         >
-          <i classNamess="fas fa-trash"></i>
+          <i className="fas fa-trash"></i>
         </button>
       </span>
     </article>
