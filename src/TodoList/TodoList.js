@@ -6,16 +6,16 @@ import './TodoList.css';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+  const addTodo = task =>
+    setTodos([...todos, { task, id: uuidv4(), isEditing: false }]);
 
-  const addTodo = task => setTodos([...todos, { task, id: uuidv4() }]);
-
-  const editTodo = (id, task) => {
-    // settodos(
-    //   todos.map(t => {
-    //     if (t.id === id) return t;
-    //     return { ...t, task };
-    //   })
-    // );
+  const editTodo = id => {
+    setTodos(
+      todos.map(t => {
+        if (t.id === id) return t;
+        return { ...t, isEditing: true };
+      })
+    );
   };
 
   const closeTodo = id => setTodos(todos.filter(t => t.id !== id));
