@@ -7,8 +7,12 @@ import './TodoList.css';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+
   const addTodo = task =>
-    setTodos([...todos, { task, id: uuidv4(), isEditing: false }]);
+    setTodos([
+      ...todos,
+      { task, id: uuidv4(), isEditing: false, isDone: false },
+    ]);
 
   const editTodo = id => {
     setTodos(
@@ -33,6 +37,15 @@ const TodoList = () => {
       todos.map(t => {
         if (t.id !== id) return t;
         return { ...t, isEditing: false };
+      })
+    );
+  };
+
+  const toggleIsDone = id => {
+    setTodos(
+      todos.map(t => {
+        if (t.id !== id) return t;
+        return { ...t, isDone: !t.isDone };
       })
     );
   };
@@ -64,6 +77,8 @@ const TodoList = () => {
               key={t.id}
               id={t.id}
               task={t.task}
+              isDone={t.isDone}
+              toggleIsDone={toggleIsDone}
               edit={editTodo}
               close={closeTodo}
             />

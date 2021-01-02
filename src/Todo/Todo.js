@@ -1,8 +1,13 @@
+import useFormInput from '../hooks/useFormInput';
 import './Todo.css';
 
 const Todo = props => {
   const handleClick = fn => () => {
     fn(props.id);
+  };
+
+  const handleCheck = evt => {
+    props.toggleIsDone(props.id);
   };
 
   return (
@@ -13,7 +18,13 @@ const Todo = props => {
           <label className="visually-hidden" htmlFor={props.id}>
             Mark as done
           </label>
-          <input type="checkbox" id={props.id} name={props.task} value="Bike" />
+          <input
+            onChange={handleCheck}
+            type="checkbox"
+            id={props.id}
+            name={'isDone'}
+            checked={props.isDone}
+          />
         </span>
       </p>
       <span className="Todo-buttons">
