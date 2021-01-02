@@ -1,4 +1,3 @@
-import useFormInput from '../hooks/useFormInput';
 import './Todo.css';
 
 const Todo = props => {
@@ -6,20 +5,19 @@ const Todo = props => {
     fn(props.id);
   };
 
-  const handleCheck = evt => {
-    props.toggleIsDone(props.id);
-  };
-
   return (
     <article className="Todo">
-      <p className="Todo-task">
+      <p
+        onClick={handleClick(props.toggleIsDone)}
+        className={`Todo-task ${props.isDone && 'Todo-isDone'}`}
+      >
         {props.task}
         <span>
           <label className="visually-hidden" htmlFor={props.id}>
             Mark as done
           </label>
           <input
-            onChange={handleCheck}
+            onChange={handleClick(props.toggleIsDone)}
             type="checkbox"
             id={props.id}
             name={'isDone'}
