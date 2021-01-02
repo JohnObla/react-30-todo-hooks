@@ -52,6 +52,16 @@ const TodoList = () => {
 
   const closeTodo = id => setTodos(todos.filter(t => t.id !== id));
 
+  const sortDone = (el1, el2) => {
+    if (el1.isDone === el2.isDone) return 0;
+    if (!el1.isDone && el2.isDone) return -1;
+    if (el1.isDone && !el2.isDone) return 1;
+
+    throw new Error(
+      `Invalid value for is done. Element 1: ${el1} Element 2: ${el2}`
+    );
+  };
+
   return (
     <main className="TodoList">
       <div className="TodoList-headers">
@@ -59,7 +69,7 @@ const TodoList = () => {
         <h5 className="TodoList-sub-header">A Simple React Hooks Todo App</h5>
       </div>
       <section className="TodoList-todos">
-        {todos.map(t => {
+        {[...todos].sort(sortDone).map(t => {
           if (t.isEditing) {
             return (
               <InlineForm
