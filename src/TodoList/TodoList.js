@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated, config } from 'react-spring';
 import { v4 as uuidv4 } from 'uuid';
 import Todo from '../Todo/Todo';
 import NewTodoForm from '../NewTodoForm/NewTodoForm';
@@ -67,8 +67,9 @@ const TodoList = () => {
 
   const transitions = useTransition(todos, todo => todo.id, {
     from: { transform: 'translate(0, 4rem)' },
-    enter: { transform: 'translate(0, 0)', opacity: 1 },
-    leave: { opacity: 0 },
+    enter: { transform: 'translate(0, 0)', height: '3rem', opacity: 1 },
+    leave: { height: '0rem', opacity: 0 },
+    config: config.default,
   });
 
   return (
