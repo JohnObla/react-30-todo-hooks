@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-30-todo-hooks/static/css/main.21f90884.chunk.css",
+    "main.js": "/react-30-todo-hooks/static/js/main.85b2f72c.chunk.js",
+    "main.js.map": "/react-30-todo-hooks/static/js/main.85b2f72c.chunk.js.map",
+    "runtime-main.js": "/react-30-todo-hooks/static/js/runtime-main.c82ae09f.js",
+    "runtime-main.js.map": "/react-30-todo-hooks/static/js/runtime-main.c82ae09f.js.map",
+    "static/js/2.cfa7dfde.chunk.js": "/react-30-todo-hooks/static/js/2.cfa7dfde.chunk.js",
+    "static/js/2.cfa7dfde.chunk.js.map": "/react-30-todo-hooks/static/js/2.cfa7dfde.chunk.js.map",
+    "static/js/3.3da41ec0.chunk.js": "/react-30-todo-hooks/static/js/3.3da41ec0.chunk.js",
+    "static/js/3.3da41ec0.chunk.js.map": "/react-30-todo-hooks/static/js/3.3da41ec0.chunk.js.map",
+    "index.html": "/react-30-todo-hooks/index.html",
+    "static/css/main.21f90884.chunk.css.map": "/react-30-todo-hooks/static/css/main.21f90884.chunk.css.map",
+    "static/js/2.cfa7dfde.chunk.js.LICENSE.txt": "/react-30-todo-hooks/static/js/2.cfa7dfde.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c82ae09f.js",
+    "static/js/2.cfa7dfde.chunk.js",
+    "static/css/main.21f90884.chunk.css",
+    "static/js/main.85b2f72c.chunk.js"
+  ]
+}
