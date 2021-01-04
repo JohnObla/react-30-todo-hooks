@@ -7,12 +7,8 @@ import InlineForm from '../InlineForm/InlineForm';
 import './TodoList.css';
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    const localStorageTodos = JSON.parse(localStorage.getItem('todos'));
-    localStorageTodos && setTodos(localStorageTodos);
-  }, []);
+  const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
+  const [todos, setTodos] = useState(initialTodos);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
