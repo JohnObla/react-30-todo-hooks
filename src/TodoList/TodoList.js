@@ -44,14 +44,13 @@ const TodoList = () => {
       <section className="TodoList-todos">
         {[...transitions]
           .sort(sortTransition)
-          .map(({ item: t, key, props }) => {
-            if (t.isEditing) {
+          .map(({ item: todo, key, props }) => {
+            if (todo.isEditing) {
               return (
                 <animated.div key={key} style={props}>
                   <InlineForm
-                    key={t.id}
-                    id={t.id}
-                    task={t.task}
+                    {...todo}
+                    key={todo.id}
                     submit={submitEdit}
                     cancel={cancelEdit}
                   />
@@ -62,10 +61,8 @@ const TodoList = () => {
             return (
               <animated.div key={key} style={props}>
                 <Todo
-                  key={t.id}
-                  id={t.id}
-                  task={t.task}
-                  isDone={t.isDone}
+                  {...todo}
+                  key={todo.id}
                   toggleIsDone={toggleIsDone}
                   edit={editTodo}
                   close={closeTodo}
