@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 import { v4 as uuidv4 } from 'uuid';
 import Todo from '../Todo/Todo';
 import NewTodoForm from '../NewTodoForm/NewTodoForm';
 import InlineForm from '../InlineForm/InlineForm';
+import useLocalStorageState from '../hooks/useLocalStorageState';
 import './TodoList.css';
 
 const TodoList = () => {
-  const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
-  const [todos, setTodos] = useState(initialTodos);
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
+  const [todos, setTodos] = useLocalStorageState('todos', []);
 
   const addTodo = task =>
     setTodos([
