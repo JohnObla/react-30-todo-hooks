@@ -1,57 +1,20 @@
 import { useTransition, animated, config } from 'react-spring';
-import { v4 as uuidv4 } from 'uuid';
 import Todo from '../Todo/Todo';
 import NewTodoForm from '../NewTodoForm/NewTodoForm';
 import InlineForm from '../InlineForm/InlineForm';
-import useLocalStorageState from '../hooks/useLocalStorageState';
+import useTodoState from '../hooks/useTodoState';
 import './TodoList.css';
 
 const TodoList = () => {
-  const [todos, setTodos] = useLocalStorageState('todos', []);
-
-  const addTodo = task =>
-    setTodos([
-      ...todos,
-      { task, id: uuidv4(), isEditing: false, isDone: false },
-    ]);
-
-  const editTodo = id => {
-    setTodos(
-      todos.map(t => {
-        if (t.id !== id) return { ...t, isEditing: false };
-        return { ...t, isEditing: true };
-      })
-    );
-  };
-
-  const submitEdit = (id, task) => {
-    setTodos(
-      todos.map(t => {
-        if (t.id !== id) return t;
-        return { ...t, task, isEditing: false };
-      })
-    );
-  };
-
-  const cancelEdit = id => {
-    setTodos(
-      todos.map(t => {
-        if (t.id !== id) return t;
-        return { ...t, isEditing: false };
-      })
-    );
-  };
-
-  const toggleIsDone = id => {
-    setTodos(
-      todos.map(t => {
-        if (t.id !== id) return t;
-        return { ...t, isDone: !t.isDone };
-      })
-    );
-  };
-
-  const closeTodo = id => setTodos(todos.filter(t => t.id !== id));
+  const {
+    todos,
+    addTodo,
+    editTodo,
+    submitEdit,
+    cancelEdit,
+    toggleIsDone,
+    closeTodo,
+  } = useTodoState();
 
   const sortDone = (el1, el2) => {
     if (el1.isDone === el2.isDone) return 0;
