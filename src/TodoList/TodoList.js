@@ -9,6 +9,15 @@ import './TodoList.css';
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
 
+  useEffect(() => {
+    const localStorageTodos = JSON.parse(localStorage.getItem('todos'));
+    localStorageTodos && setTodos(localStorageTodos);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const addTodo = task =>
     setTodos([
       ...todos,
